@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Session refresh</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery-titlealert.js"></script>
+</head>
+<body>
+	<div id="container">
+		<div id="main">
+			<div style="margin-left: 50px; margin-right:50px;">
+				<h1>Session auto refresh</h1>
+
+				<ol>
+					<li>add links to CSS and jQuery in the &lt;head&gt; section of a page
+						<pre>
+&lt;link rel="stylesheet" href="css/bootstrap.min.css"&gt;
+&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery-titlealert.js"&gt;&lt;/script&gt;
+						</pre>
+					</li>
+					<li>add session auto refresh scripts at the bottom of &lt;body&gt; section
+						<pre>
+	&lt;script src="bootstrap-session-timeout.js"&gt;&lt;/script&gt;
+	&lt;script&gt;
+		$.sessionRefresh({
+			keepAliveUrl: 'keepsessionalive.html',
+			logoutUrl: 'logout.html',
+			redirUrl: 'redirect.html',
+			warnAfter: 5000, // 5 seconds
+			redirAfter: 20000, // 10 seconds
+			keepAliveInterval: 12000, // 12 seconds
+			countdownBar: true
+		});
+	&lt;/script&gt;
+&lt;/body&gt;
+						</pre>
+					</li>
+				</ol>
+			</div>
+		</div>
+		<script src="js/bootstrap-session-timeout.js"></script>
+		<script>
+			$.sessionRefresh({
+				keepAliveUrl: 'keepsessionalive.html',
+				logoutUrl: 'logout.html',
+				redirUrl: 'redirect.html',
+				warnAfter: 5000, // 5 seconds
+				redirAfter: 20000, // 10 seconds
+				keepAliveInterval: 12000, // 12 seconds
+				countdownBar: true
+			});
+
+		</script>
+		<div id="bottomSeperator">&#160;</div>
+	</div>
+</body>
+</html>
