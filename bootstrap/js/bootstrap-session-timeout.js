@@ -1,10 +1,10 @@
 (function($) {
-    /*jshint multistr: true */
     'use strict';
     $.sessionRefresh = function(options) {
         var defaultValues = {
             title: 'Your Session is About to Expire!',
             message: 'Your session is about to expire.',
+            tabFlashMessage: 'You are about to be logged out!',
             logoutButton: 'Logout',
             keepAliveButton: 'Stay Connected',
             keepAliveUrl: '/keep-alive',
@@ -195,7 +195,7 @@
             // If opt.countdownBar is true, calculate remaining time percentage
             if (opt.countdownBar && type === 'dialog') {
                 countdown.percentLeft = Math.floor(countdown.timeLeft / ((opt.redirAfter - opt.warnAfter) / 1000) * 100);
-                $.titleAlert("You're about to get logged out!", {
+                $.titleAlert(opt.tabFlashMessage, {
                     requireBlur:false,
                     stopOnFocus:false,
                     duration:1000,
