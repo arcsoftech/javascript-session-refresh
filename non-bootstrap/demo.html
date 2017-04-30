@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Javascript session refresh</title>
+	<link rel="stylesheet" href="css/styles.css">
+	<script src="js/jquery.min.js"></script>
+	<script src="js/modal-window.min.js"></script>
+	<script src="js/jquery-titlealert.js"></script>
+</head>
+<body>
+	<div style="margin-left: 50px; margin-right:50px;">
+		<h1>Javascript session refresh</h1>
+		<p>You will see a modal window appear in 5 seconds. Please don't type or move your mouse cursor.</p>
+	</div>
+
+	<script src="js/non-bootstrap-session-timeout.js"></script>
+	<script>
+		$.sessionRefresh({
+			keepAliveUrl: 'keepsessionalive.html',
+			logoutUrl: 'logout.html',
+			redirUrl: 'redirect.html',
+			warnAfter: 5000, // 5 seconds
+			redirAfter: 20000, // 20 seconds
+			keepAliveInterval: 12000, // 12 seconds
+			countdownBar: true,
+			tabFlashMessage: 'You are about to be logged out!',
+		});
+	</script>
+</body>
+</html>
