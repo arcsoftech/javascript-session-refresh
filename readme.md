@@ -11,6 +11,10 @@ Title alert has been inspired by https://github.com/heyman/jquery-titlealert.
 
 ## How to use it
 
+There are two implementations: for Bootstrap'ed websites and non-Bootstrap'ed ones.
+
+### Bootstrap'ed
+
 Add links to the ```<head>``` section of your HTML document or at the bottom of ```<body>``` section
 
 ```
@@ -39,11 +43,39 @@ Add this snippet to the bottom of your ```<body>``` tag (below the links mention
 
 Save your document and test.
 
+### non-Bootstrap'ed
+
+Add links to the ```<head>``` section of your HTML document or at the bottom of ```<body>``` section
+
+```
+<link rel="stylesheet" href="css/styles.css">
+<script src="js/jquery.min.js"></script>
+<script src="js/modal-window.min.js"></script>
+<script src="js/jquery-titlealert.js"></script>
+```
+
+Add this snippet to the bottom of your ```<body>``` tag (below the links mentioned above)
+```
+<script src="js/bootstrap-session-timeout.js"></script>
+<script>
+	$.sessionRefresh({
+		keepAliveUrl: 'keepsessionalive.html',
+		logoutUrl: 'logout.html',
+		redirUrl: 'redirect.html',
+		warnAfter: 5000, // 5 seconds
+		redirAfter: 20000, // 20 seconds
+		keepAliveInterval: 12000, // 12 seconds
+		countdownBar: true,
+		tabFlashMessage: 'You are about to be logged out!'
+	});
+</script>
+```
+
+Save your document and test.
+
 ## Content of the repository
 
 There are 2 folders in this project - **bootstrap** and **non-bootstrap**. Files in **bootstrap** folder utilize Bootstrap framework and will display modal alert window with a countdown bar. Files in **non-bootstrap** folder use custom CSS styles and stripped down modal alert from bootstrap.
-
-Currently I'm adding **bootstrap folder** as I'm working on a demo for non-bootstrap page.
 
 ## Possible limitations
 
