@@ -56,7 +56,7 @@ Add links to the ```<head>``` section of your HTML document or at the bottom of 
 
 Add this snippet to the bottom of your ```<body>``` tag (below the links mentioned above)
 ```
-<script src="js/bootstrap-session-timeout.js"></script>
+<script src="js/non-bootstrap-session-timeout.js"></script>
 <script>
 	$.sessionRefresh({
 		keepAliveUrl: 'keepsessionalive.html',
